@@ -1,0 +1,15 @@
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+:root{
+  --black: #262526;
+  --dark: #404040;
+  --gray: #8C8979;
+  --white: #F2F2F2;
+  --red: #F60A20;
+}
