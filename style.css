@@ -7,8 +7,14 @@ body{
   font-family: 'Poppins', sans-serif;
 }
 
+/* container */
+.container{
+  scroll-snap-type: y mandatory;
+}
+
 /* header */
-header{
+.header{
+  scroll-snap-align: start;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -17,44 +23,100 @@ header{
   text-align: center;
 }
 
-header h1{
-  color: var(--red);
-  font-size: 100px;
+.header h1{
+  color: var(--lightorange);
+  font-size: 120px;
   font-weight: 400;
-  margin: 0;
+  margin: 10vh 0 1vh;
 }
 
-header h2{
-  color: var(--blue);
+.header h2{
+  color: var(--orange);
   font-size: 40px;
   font-weight: 200;
   margin: 0;
 }
 
-header img{
-  height: 30px;
-  width: 100px;
+.header img{
+  height: 15px;
+  width: 30px;
 }
 
 /* main */
-main{
+.main{
+  scroll-snap-align: start;
   height: 90vh;
-  background-color: var(--light);
+  background-color: var(--yellow);
+  text-align: center;
+
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-areas:
+    "gh ig"
+    "ml ml";
+}
+
+.main .grid-item{
+  margin: 16px;
+  padding: 10px;
+  box-shadow: rgba(100, 100, 111, 0.2) 4px 4px 12px;
+  border-radius: 40px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.main .gh{
+  grid-area: gh;
+}
+
+.main .ig{
+  grid-area: ig;
+}
+
+.main .ml{
+  grid-area: ml;
+}
+
+.main h1{
+  margin: 0;
+  color: var(--black);
+  font-size: 60px;
+  font-weight: 400;
+
+}
+
+.main p{
+  margin: 0;
+  color: var(--dark);
+  font-size: 40px;
+  font-weight: 200;
 }
 
 /* footer */
-footer{
+.footer{
   height: 10vh;
-  background-color: var(--white)
+  background-color: var(--yellow);
+  color: var(--dark);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.footer p{
+  margin: 0;
+  font-size: 18px;
 }
 
 
 
 /* colors */
 :root{
-  --dark: #4E565C;
-  --light: #C3D7DF;
-  --white: #FFFFFF;
-  --blue: #6991AC;
-  --red: #D75C37;
+  --black: #000000;
+  --dark: #151515;
+  --yellow: #F8A145;
+  --lightorange: #F07900;
+  --orange: #D35100;
 }
