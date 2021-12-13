@@ -7,14 +7,10 @@ body{
   font-family: 'Poppins', sans-serif;
 }
 
-/* container */
-.container{
-  scroll-snap-type: y mandatory;
-}
+
 
 /* header */
-.header{
-  scroll-snap-align: start;
+header{
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -23,89 +19,232 @@ body{
   text-align: center;
 }
 
-.header h1{
+header h1{
   color: var(--lightorange);
   font-size: 120px;
   font-weight: 400;
   margin: 10vh 0 1vh;
 }
 
-.header h2{
+header h2{
   color: var(--orange);
   font-size: 40px;
   font-weight: 200;
   margin: 0;
 }
 
-.header img{
+header img{
   height: 15px;
   width: 30px;
 }
 
+
+
 /* main */
-.main{
-  scroll-snap-align: start;
+main{
   height: 90vh;
   background-color: var(--yellow);
-  text-align: center;
 
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 70% 30%;
+  grid-template-rows: 70% 30%;
   grid-template-areas:
-    "gh ig"
-    "ml ml";
+    "projects social"
+    "contact social";
 }
 
-.main .grid-item{
-  margin: 16px;
-  padding: 10px;
-  box-shadow: rgba(100, 100, 111, 0.2) 4px 4px 12px;
-  border-radius: 40px;
+main .grid-item{
+  background-color: var(--yellow);
+  border-radius: 20px;
+  display: grid;
+  box-shadow: 0px 0px 24px 8px rgba(0, 0, 0, 0.1);
+}
+
+main .projects{
+  grid-area: projects;
+  margin: 40px 20px 20px 40px;
+
+  display: grid;
+  grid-template-columns: 35% 65%;
+  grid-template-areas:
+    "heading content";
+}
+
+main .social{
+  grid-area: social;
+  margin: 40px 40px 0 20px;
+
+  display: grid;
+  grid-template-rows: 10% 90%;
+  grid-template-areas:
+    "heading"
+    "content";
+}
+
+main .contact{
+  grid-area: contact;
+  margin: 20px 20px 0 40px;
+
+  display: grid;
+  grid-template-columns: 35% 65%;
+  grid-template-areas:
+    "heading content";
+}
+
+main .heading{
+  background-color: var(--lightorange);
+  grid-area: heading;
+  padding: 10px 16px;
+  border-radius: 14px;
+  box-shadow: 0px 0px 10px 4px rgba(248, 161, 69, 0.2);
 
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.main .gh{
-  grid-area: gh;
-}
-
-.main .ig{
-  grid-area: ig;
-}
-
-.main .ml{
-  grid-area: ml;
-}
-
-.main h1{
-  margin: 0;
-  color: var(--black);
-  font-size: 60px;
-  font-weight: 400;
-
-}
-
-.main p{
-  margin: 0;
+main .heading h3{
   color: var(--dark);
-  font-size: 40px;
-  font-weight: 200;
+  margin: 0;
+  text-transform: uppercase;
+  font-size: 32px;
+  font-weight: 400;
 }
+
+main .card-content{
+  /*iloveu*/
+  color: var(--dark);
+  font-size: 24px;
+  grid-area: content;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main .social .card-content{
+  flex-direction: column;
+}
+
+main a{
+  color: var(--dark);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+main a:hover{
+  color: var(--orange);
+  text-decoration: underline;
+}
+
+main img{
+  width: 18vw;
+  height: 18vh;
+}
+
+main .instagram, main .github{
+  margin: 4vh 10px;
+}
+
+main .instagram p, main .github p{
+  text-align: center;
+  margin: 0;
+}
+
+
+
+@media (max-width: 1000px){
+  main .heading h3{
+    font-size: 28px;
+  }
+
+  main img{
+    width: 16vw;
+    height: 16vh;
+  }
+}
+
+@media (max-width: 800px){
+  header h1{
+    font-size: 60px;
+  }
+
+  header h2{
+    font-size: 30px;
+  }
+
+  main{
+    grid-template-rows: 30vh 30vh 30vh;
+    grid-template-columns: 100%;
+    grid-template-areas:
+      "projects"
+      "social"
+      "contact";
+  }
+
+  main .projects{
+    grid-template-rows: 40% 60%;
+    grid-template-columns: 100%;
+    grid-template-areas:
+      "heading"
+      "content";
+    margin: 10px 10px 5px 10px;
+  }
+
+  main .social{
+    grid-template-rows: 30% 70%;
+    grid-template-columns: 100%;
+    grid-template-areas:
+      "heading"
+      "content";
+    margin: 5px 10px 5px 10px;
+  }
+
+  main .contact{
+    grid-template-rows: 40% 60%;
+    grid-template-columns: 100%;
+    grid-template-areas:
+      "heading"
+      "content";
+    margin: 5px 10px 10px 10px;
+  }
+
+  main .social .card-content{
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+  }
+  main .instagram, main .github{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0;
+  }
+
+  main .instagram p, main .github p{
+    margin: 0;
+  }
+
+  main img{
+    width: 40px;
+    height: 60px;
+    margin: 0 10px 0 0;
+    }
+}
+
+
 
 /* footer */
-.footer{
+footer{
   height: 10vh;
   background-color: var(--yellow);
-  color: var(--dark);
+  color: var(--lightorange);
   display: flex;
   align-items: center;
   justify-content: space-around;
 }
 
-.footer p{
+footer p{
   margin: 0;
   font-size: 18px;
 }
